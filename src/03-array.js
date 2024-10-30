@@ -14,7 +14,12 @@
  * console.log(numbers); // [5]
  */
 function returnNumbers(start, finish) {
-
+    const numbers = []
+    for(let i = start; i <= finish; i++){
+        numbers.push([i])
+    }
+    console.log(numbers)
+    return numbers
 }
 
 
@@ -28,9 +33,11 @@ function returnNumbers(start, finish) {
  * const total = sumArray([1, 2, 3]); // total will be 6
  * const anotherTotal = sumArray([-1, -2, 3]); // anotherTotal will be 0
  */
+// from stack overflow: https://stackoverflow.com/questions/1230233/how-to-find-the-sum-of-an-array-of-numbers
 
 function sumArray(array) {
-
+    const sum = array.reduce((partialSum, a) => partialSum + a, 0);
+    return sum
 }
 
 /**
@@ -45,7 +52,8 @@ function sumArray(array) {
  * const updatedArray = pushElement(myArray, 4); // updatedArray will be [1, 2, 3, 4]
  */
 function pushElement(arr, elem) {
-
+    arr.push(elem)
+    return arr
 }
 
 
@@ -61,5 +69,7 @@ function pushElement(arr, elem) {
  * const filtered = removeValue(numbers, 2); // filtered will be [1, 3, 4, 5]
  */
 function removeValue(array, valueToRemove) {
-
+    const index = array.indexOf(valueToRemove)
+    array.splice(index)
+    return array
 }

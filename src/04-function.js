@@ -9,12 +9,11 @@
  * const message = generateMessage("Jack", 25); // "Hey Jack, happy 25 birthday!"
  */
 function generateMessage(name, age) {
-
+    return `Hey ${name}, happy ${age} birthday!`
 }
 
 /**
  * This function capitalizes the first letter of every word in a sentence.
- *
  * @param {string} sentence - The sentence to be title cased.
  * @returns {string} - The title cased sentence.
  *
@@ -22,7 +21,13 @@ function generateMessage(name, age) {
  * const title = titleCase("hello world"); // title will be "Hello World"
  */
 function titleCase(sentence) {
-
+    const splitSentence = sentence.split(" ")
+    console.log(splitSentence)
+    for(let i =0; i < splitSentence.length; i++){
+        splitSentence[i] = splitSentence[i].charAt(0).toUpperCase() + splitSentence[i].substring(1)
+    } splitSentence.join(" ");
+    console.log(splitSentence)
+    console.log(splitSentence.join())
 }
 
 /**
@@ -36,7 +41,11 @@ function titleCase(sentence) {
  * const sum = sumOfRange(1, 4); // sum will be 10
  */
 function sumOfRange(start, end) {
-
+    let sum = 0
+    for(let i = start; i <= end; i++){
+        sum += i;
+    }
+    return sum
 }
 
 
@@ -50,8 +59,13 @@ function sumOfRange(start, end) {
  * const acronym = generateAcronym("Open 24 Hours a Day"); // acronym will be "OHAD"
  * const anotherAcronym = generateAcronym("Federal Bureau Investigation"); // anotherAcronym will be "FBI"
  */
-function generateAcronym(sentence) {
+//Fra stackoverflow: https://stackoverflow.com/questions/1508147/generate-an-abbreviation-from-a-string-in-javascript-using-regular-expressions
 
+function generateAcronym(sentence) {
+    const acronym = sentence.match(/\b([A-Z,a-z])/g).join('');
+    const upperCaseAcronym= acronym.toUpperCase()
+    console.log(upperCaseAcronym)
+    return upperCaseAcronym
 }
 
 

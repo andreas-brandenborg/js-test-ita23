@@ -8,7 +8,12 @@
  * // person might be { name: 'John Doe', age: 30, city: 'New York' }
  */
 function createPersonObject() {
-
+    const person = {
+        name: "John Doe",
+        age: 30,
+        city: "New York"
+    }
+    return person
 }
 
 
@@ -23,7 +28,10 @@ function createPersonObject() {
  * // personName will be 'John Doe'
  */
 function getPersonName(person) {
-
+    const person2 = {
+        name: "John Doe"
+    }
+    return person.name
 }
 
 
@@ -55,7 +63,11 @@ function findPersonByName(persons, name) {
  * // totalAge will be 55
  */
 function getTotalAge(persons) {
-
+    const firstPersonAge = persons[1].age
+    console.log(firstPersonAge)
+    const secondPersonAge = persons[2].age
+    console.log(secondPersonAge)
+    return firstPersonAge+secondPersonAge
 }
 
 
